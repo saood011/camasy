@@ -1,5 +1,5 @@
-# Hostel-Management
-Manage Your Hostel 
+# Campus-Management
+Manage Your Campus 
 
 ## Topics Covered
 - MERN Stack
