@@ -1,0 +1,427 @@
+* {
+  font-family: "Times New Roman", Times, serif;
+}
+
+img {
+  width: 100%;
+}
+
+.min-height {
+  min-height: 90vh;
+}
+body,
+.bg-calendar {
+  background: rgb(222, 238, 174);
+  background: linear-gradient(
+    90deg,
+    rgba(222, 238, 174, 1) 0%,
+    rgba(148, 173, 233, 1) 100%
+  );
+}
+.landing {
+  position: relative;
+  background: url("./img/cover.jpeg") no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 120vh;
+  margin-top: -90px;
+  margin-bottom: -50px;
+  z-index: -1;
+}
+
+.landing-inner {
+  padding-top: 200px;
+}
+
+.dark-overlay {
+  background-color: rgba(0, 0, 0, 0.897);
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.card-form {
+  opacity: 0.9;
+}
+
+.latest-profiles-img {
+  width: 40px;
+  height: 40px;
+}
+
+.form-control::placeholder {
+  color: #bbb !important;
+}
+
+.student-text,
+.repair-text,
+.staff-text {
+  background-color: rgba(0, 0, 0, 0.719);
+  min-width: 120px;
+  height: 50px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.student-text:hover,
+.repair-text:hover,
+.staff-text:hover {
+  background-color: black;
+}
+.cms:hover {
+  background: black;
+  padding: 20px;
+  border-radius: 5px;
+}
+.welcome-name {
+  position: absolute;
+  background-image: url("./img/nav-image.jpeg");
+  background-size: cover;
+  background-position: center;
+  height: 50%;
+  top: 0;
+  z-index: -1;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bg-black {
+  background-color: black;
+  background-image: url("./img/footer.jpeg");
+  background-size: cover;
+}
+.top-margin {
+  margin-top: 45vh;
+}
+.bg-nav {
+  background-color: rgba(0, 0, 0, 0.425) !important;
+}
+.nav-link {
+  transition: 1s;
+}
+
+.nav-link:hover {
+  border-bottom: 2px solid red !important;
+  background-color: black;
+}
+
+/* image overlay */
+.overlay-container {
+  position: relative;
+  width: 100%;
+}
+
+.imageToBeOverlayed {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #1b1c1da6;
+  overflow: hidden;
+  width: 100%;
+  height: 0;
+  transition: 0.2s ease;
+}
+
+.overlay-container:hover .overlay {
+  height: 100%;
+}
+
+.text {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.bg-translucent {
+  background-color: rgba(189, 27, 27, 0.623);
+}
+.welcome-text {
+  position: absolute;
+  bottom: 0;
+}
+.fc-content {
+  text-align: center;
+  text-transform: capitalize;
+  color: white;
+  box-shadow: 6px 2px 17px 0px rgba(73, 72, 72, 0.75);
+}
+.fc-today {
+  background: rgb(249, 253, 185) !important;
+  font-weight: bolder;
+}
+.fc-day {
+  background: white;
+}
+
+.fc-sun {
+  background-color: rgb(240, 236, 236);
+}
+.fc-sat {
+  background-color: rgb(240, 236, 236);
+}
+button {
+  text-transform: capitalize !important;
+}
+.fc-height {
+  height: 600px;
+}
+.fc-toolbar.fc-header-toolbar {
+  margin-bottom: 0px;
+  background: white;
+}
+
+#find {
+  width: 150px;
+}
+
+.tracking-in-contract-bck {
+  -webkit-animation: tracking-in-contract-bck 1s
+    cubic-bezier(0.215, 0.61, 0.355, 1) both;
+  animation: tracking-in-contract-bck 1s cubic-bezier(0.215, 0.61, 0.355, 1)
+    both;
+}
+@-webkit-keyframes tracking-in-contract-bck {
+  0% {
+    letter-spacing: 1em;
+    -webkit-transform: translateZ(400px);
+    transform: translateZ(400px);
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    opacity: 1;
+  }
+}
+@keyframes tracking-in-contract-bck {
+  0% {
+    letter-spacing: 1em;
+    -webkit-transform: translateZ(400px);
+    transform: translateZ(400px);
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    opacity: 1;
+  }
+}
+
+.nav-link {
+  color: white;
+}
+
+@media only screen and (max-width: 760px),
+  (min-device-width: 768px) and (max-device-width: 1024px) {
+  /* Force table to not be like tables anymore */
+  .report-table,
+  .report-thead,
+  .report-tbody,
+  .report-th,
+  .report-td,
+  .report-tr {
+    display: block;
+  }
+
+  /* Hide table headers (but not display: none;, for accessibility) */
+  .report-thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  .report-tr {
+    border: 1px solid #ccc;
+  }
+
+  .report-td {
+    /* Behave  like a "row" */
+    border: none;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    padding-left: 50%;
+  }
+
+  .report-td:before {
+    /* Now like a table header */
+    /* Top/left values mimic padding */
+    top: 6px;
+    left: 6px;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+  }
+
+  /*
+	Label the data
+  */
+
+  .report-th:nth-of-type(1):before {
+    content: "Report";
+    font-weight: bold;
+    padding-right: 10px;
+  }
+  .report-td:nth-of-type(1):before {
+    content: "Report";
+    font-weight: bold;
+  }
+  .report-td:nth-of-type(2):before {
+    content: "Report Type";
+    font-weight: bold;
+  }
+  .report-td:nth-of-type(3):before {
+    content: "Date and Time";
+    font-weight: bold;
+  }
+  .report-td:nth-of-type(4):before {
+    content: "Reported by";
+    font-weight: bold;
+  }
+  .report-td:nth-of-type(5):before {
+    content: "Delete";
+  }
+}
+
+@media only screen and (max-width: 760px),
+  (min-device-width: 768px) and (max-device-width: 1024px) {
+  /* Force table to not be like tables anymore */
+  .student-table,
+  .student-thead,
+  .student-tbody,
+  .student-th,
+  .student-td,
+  .student-tr {
+    display: block;
+  }
+
+  /* Hide table headers (but not display: none;, for accessibility) */
+  .student-thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  .student-tr {
+    border: 1px solid #ccc;
+    width: 100% !important;
+  }
+
+  .student-td {
+    /* Behave  like a "row" */
+    border: none;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    padding-left: 50%;
+  }
+
+  .student-td:before {
+    /* Now like a table header */
+    /* Top/left values mimic padding */
+    top: 6px;
+    left: 6px;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+  }
+  .student-th {
+    background-color: white;
+    border-top: 2px solid red !important;
+  }
+
+  /*
+	Label the data
+  */
+
+  .student-th:nth-of-type(1):before {
+    content: "S.No";
+    font-weight: bold;
+    padding-right: 10px;
+  }
+  .student-td:nth-of-type(1):before {
+    content: "Full-name";
+    font-weight: bold;
+  }
+  .student-td:nth-of-type(2):before {
+    content: "Email";
+    font-weight: bold;
+  }
+  .student-td:nth-of-type(3):before {
+    content: "ID";
+    font-weight: bold;
+  }
+  .student-td:nth-of-type(4):before {
+    content: "Block";
+    font-weight: bold;
+  }
+  .student-td:nth-of-type(5):before {
+    content: "Room No.";
+    font-weight: bold;
+  }
+  .student-td:nth-of-type(6):before {
+    content: "Gender";
+    font-weight: bold;
+  }
+  .student-td:nth-of-type(7):before {
+    content: "Availablility";
+    font-weight: bold;
+  }
+  .student-td:nth-of-type(8):before {
+    content: "Delete";
+    font-weight: bold;
+  }
+}
+
+.navbar-collapse {
+  justify-content: flex-end !important;
+}
+.student-thead {
+  border-top: 2px solid red !important;
+}
+.report-thead {
+  border-top: 2px solid yellow !important;
+}
+.staff {
+  width: 300px;
+}
+table#mytableofinventory tr td p i {
+  color: white;
+  font-size: large;
+  transform: 3s;
+}
+
+table#mytableofinventory tr:hover td p i {
+  color: red;
+  cursor: pointer;
+  font-size: x-large;
+  transform: rotate(-40deg);
+}
+table#mytableofinventory thead {
+  border-top: 2px solid red;
+}
+.popup-content {
+  padding: 10px !important;
+  width: 500px !important;
+}

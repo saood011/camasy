@@ -1,0 +1,43 @@
+{
+  "name": "campus-management",
+  "version": "1.0.0",
+  "description": "Login Portal",
+  "main": "server.js",
+  "scripts": {
+    "test": "cross-env NODE_ENV=test jest --forceExit",
+    "test:watch": "cross-env NODE_ENV=test jest --watchAll",
+    "client-install": "npm install --prefix client",
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+  },
+  "repository": {
+    "type": "git"
+  },
+  "author": "Saood",
+  "license": "MIT",
+  "bugs": {},
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.18.3",
+    "concurrently": "^4.1.0",
+    "cross-env": "^6.0.3",
+    "express": "^4.16.4",
+    "gravatar": "^1.8.0",
+    "jsonwebtoken": "^8.5.1",
+    "mocha": "^6.2.2",
+    "moment": "^2.24.0",
+    "mongoose": "^5.7.5",
+    "passport": "^0.4.1",
+    "passport-jwt": "^4.0.0",
+    "react-animated-css": "^1.2.1",
+    "react-animations": "^1.0.0",
+    "reactjs-popup": "^1.5.0",
+    "validator": "^12.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.10"
+  }
+}

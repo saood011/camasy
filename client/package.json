@@ -1,0 +1,49 @@
+{
+  "name": "client",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@fullcalendar/bootstrap": "^4.4.0",
+    "@fullcalendar/core": "^4.4.0",
+    "@fullcalendar/daygrid": "^4.4.0",
+    "@fullcalendar/interaction": "^4.4.0",
+    "@fullcalendar/react": "^4.4.0",
+    "@fullcalendar/timegrid": "^4.4.0",
+    "axios": "^0.18.0",
+    "classnames": "^2.2.6",
+    "jwt-decode": "^2.2.0",
+    "moment": "^2.24.0",
+    "nodemailer": "^6.4.6",
+    "react": "^16.8.6",
+    "react-animation": "^1.2.2",
+    "react-big-calendar": "^0.23.0",
+    "react-datepicker": "^2.12.1",
+    "react-dom": "^16.8.6",
+    "react-google-charts": "^3.0.15",
+    "react-loading": "^2.0.3",
+    "react-redux": "^6.0.1",
+    "react-router-dom": "^5.0.0",
+    "react-scripts": "^3.1.1",
+    "react-toastify": "^5.5.0",
+    "reactjs-popup": "^1.5.0",
+    "redux": "^4.0.1",
+    "redux-thunk": "^2.3.0",
+    "sweetalert2": "^9.7.2"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "proxy": "http://localhost:5000"
+}

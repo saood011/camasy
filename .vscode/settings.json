@@ -1,0 +1,7 @@
+{
+  "editor.tokenColorCustomizations": {
+    "[Horizon]": {
+      "comments": "#52eb23"
+    }
+  }
+}
