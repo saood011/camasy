@@ -16,13 +16,13 @@ class SingleStudent extends Component {
     end: moment().format("YYYY-MM-DD"),
     color: "red",
     renderCalender: false,
-    otherEvent: false
+    otherEvent: false,
   };
   componentDidMount() {
     this.props.getSingleStudentDetails(this.props.match.params.id);
   }
 
-  onButtonClick = data => {
+  onButtonClick = (data) => {
     if (data.start) {
       Axios.post("/api/student/attend/addAttendance", data);
       this.props.getSingleStudentDetails(data._id); // "this.props.match.param.id" and "data._id" are same
@@ -34,7 +34,7 @@ class SingleStudent extends Component {
     }
   };
 
-  onChangeHandler = e => {
+  onChangeHandler = (e) => {
     this.setState({ [e.target.name]: e.target.value });
   };
 
@@ -47,7 +47,7 @@ class SingleStudent extends Component {
               <Reactloading type="bubbles" color="red" />
             ) : (
               <div className=" d-flex justify-content-center mt-2">
-                {this.props.studentDetails.studentData.map(v => (
+                {this.props.studentDetails.studentData.map((v) => (
                   <div className="d-flex flex-wrap justify-content-center">
                     <p className="bg-light shadow d-flex justify-content align-items-center p-2 ">
                       Name<i class="material-icons">play_arrow</i>
@@ -166,7 +166,7 @@ class SingleStudent extends Component {
                                       onClick={() =>
                                         this.setState({
                                           color: "red",
-                                          title: "absent"
+                                          title: "absent",
                                         })
                                       }
                                     />
@@ -177,7 +177,7 @@ class SingleStudent extends Component {
                                       onClick={() =>
                                         this.setState({
                                           color: "blue",
-                                          title: "came late"
+                                          title: "came late",
                                         })
                                       }
                                     />
@@ -188,7 +188,7 @@ class SingleStudent extends Component {
                                       onClick={() =>
                                         this.setState({
                                           color: "yellow",
-                                          title: "left early"
+                                          title: "left early",
                                         })
                                       }
                                     />
@@ -198,10 +198,10 @@ class SingleStudent extends Component {
                                       name="title"
                                       className="btn btn-sm btn-dark mt-3"
                                       onChange={this.onChangeHandler}
-                                      onClick={e => {
+                                      onClick={(e) => {
                                         e.preventDefault();
                                         this.setState({
-                                          otherEvent: !this.state.otherEvent
+                                          otherEvent: !this.state.otherEvent,
                                         });
                                       }}
                                     />
@@ -248,7 +248,7 @@ class SingleStudent extends Component {
                                     _id: v._id,
                                     title: this.state.title,
                                     end: this.state.end,
-                                    color: this.state.color
+                                    color: this.state.color,
                                   })
                                 }
                                 data-dismiss="modal"
@@ -281,9 +281,9 @@ class SingleStudent extends Component {
   }
 }
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   errors: state.errors,
-  studentDetails: state.studentDetails
+  studentDetails: state.studentDetails,
 });
 
 export default connect(mapStateToProps, { getSingleStudentDetails })(
