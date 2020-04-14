@@ -18,13 +18,14 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 // DB Config
-const db = require("./config/keys").mongoURI;
+const db =
+  " mongodb+srv://saood-data:1234@cluster0-p1lze.mongodb.net/test?retryWrites=true&w=majority";
 
 // connect to mongoDB
 mongoose
   .connect(db, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log("MongoDB Connected"))
-  .catch(err => console.log(err));
+  .catch((err) => console.log(err));
 
 // Passport middleware
 app.use(passport.initialize());
