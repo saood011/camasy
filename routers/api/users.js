@@ -29,7 +29,7 @@ router.post("/register", (req, res) => {
     return res.status(400).json(errors);
   }
 
-  User.findOne({ email: req.body.email }).then(user => {
+  User.findOne({ email: req.body.email }).then((user) => {
     if (user) {
       errors.email = "Email Already Exists";
       return res.status(400).json(errors);
@@ -37,14 +37,14 @@ router.post("/register", (req, res) => {
       const avatar = gravatar.url(req.body.email, {
         s: "200", // Size
         r: "pg", // Rating
-        d: "mm" // Default
+        d: "mm", // Default
       });
 
       const newUser = new User({
         name: req.body.name,
         email: req.body.email,
         avatar,
-        password: req.body.password
+        password: req.body.password,
       });
 
       brcrypt.genSalt(10, (err, salt) => {
@@ -53,8 +53,8 @@ router.post("/register", (req, res) => {
           (newUser.password = hash),
             newUser
               .save()
-              .then(user => res.json(user))
-              .catch(err => console.log(err));
+              .then((user) => res.json(user))
+              .catch((err) => console.log(err));
         });
       });
     }
@@ -76,7 +76,7 @@ router.post("/login", (req, res) => {
   }
 
   // Find user by email
-  User.findOne({ email }).then(user => {
+  User.findOne({ email }).then((user) => {
     // Check for user
     if (!user) {
       errors.email = "User not found";
@@ -84,23 +84,18 @@ router.post("/login", (req, res) => {
     }
 
     // Check Password
-    brcrypt.compare(password, user.password).then(isMatch => {
+    brcrypt.compare(password, user.password).then((isMatch) => {
       if (isMatch) {
         // User Matched
         const payload = { id: user.id, name: user.name, avatar: user.avatar }; // Create JWT Payload
 
         // Sign Token
-        jwt.sign(
-          payload,
-          keys.secretOrKey,
-          { expiresIn: 172800 },
-          (err, token) => {
-            res.json({
-              success: true,
-              token: "Bearer " + token
-            });
-          }
-        );
+        jwt.sign(payload, "1234", { expiresIn: 172800 }, (err, token) => {
+          res.json({
+            success: true,
+            token: "Bearer " + token,
+          });
+        });
       } else {
         errors.password = "Password Incorrect";
         return res.status(400).json(errors);
@@ -119,7 +114,7 @@ router.get(
     res.json({
       id: req.user.id,
       name: req.user.name,
-      email: req.user.email
+      email: req.user.email,
     });
   }
 );
